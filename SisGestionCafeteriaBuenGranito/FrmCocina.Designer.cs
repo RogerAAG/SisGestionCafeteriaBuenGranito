@@ -37,17 +37,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(64)))), ((int)(((byte)(43)))));
-            this.panel1.Location = new System.Drawing.Point(2, -1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(174, 454);
+            this.panel1.Size = new System.Drawing.Size(128, 450);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanelPedidos
             // 
             this.flowLayoutPanelPedidos.AutoScroll = true;
-            this.flowLayoutPanelPedidos.Location = new System.Drawing.Point(182, -1);
+            this.flowLayoutPanelPedidos.Location = new System.Drawing.Point(134, -1);
             this.flowLayoutPanelPedidos.Name = "flowLayoutPanelPedidos";
-            this.flowLayoutPanelPedidos.Size = new System.Drawing.Size(620, 454);
+            this.flowLayoutPanelPedidos.Size = new System.Drawing.Size(668, 454);
             this.flowLayoutPanelPedidos.TabIndex = 1;
             // 
             // timerRefresco
