@@ -11,7 +11,7 @@ namespace SisGestionCafeteriaBuenGranito
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCaja());
+            Application.Run(new FrmLogin());
         }
     }
 }
