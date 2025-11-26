@@ -1,4 +1,4 @@
-﻿namespace GranitoPOS
+﻿namespace SisGestionCafeteriaBuenGranito
 {
     partial class FrmCaja
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCaja));
             this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnCafe = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@
             this.btnMocaccino = new System.Windows.Forms.Button();
             this.btnEmpanada = new System.Windows.Forms.Button();
             this.btnMuffin = new System.Windows.Forms.Button();
+            this.btnAbrirCocina = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.pnl1.SuspendLayout();
             this.SuspendLayout();
@@ -75,11 +77,11 @@
             // btnCafe
             // 
             this.btnCafe.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCafe.Image = ((System.Drawing.Image)(resources.GetObject("btnCafe.Image")));
             this.btnCafe.Location = new System.Drawing.Point(12, 12);
             this.btnCafe.Name = "btnCafe";
             this.btnCafe.Size = new System.Drawing.Size(110, 100);
             this.btnCafe.TabIndex = 2;
-            this.btnCafe.Text = "Espresso";
             this.btnCafe.UseVisualStyleBackColor = true;
             this.btnCafe.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnCafe_MouseClick);
             // 
@@ -119,6 +121,7 @@
             // pnl1
             // 
             this.pnl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(64)))), ((int)(((byte)(43)))));
+            this.pnl1.Controls.Add(this.btnAbrirCocina);
             this.pnl1.Controls.Add(this.btnEliminar);
             this.pnl1.Controls.Add(this.btnCobrar);
             this.pnl1.Controls.Add(this.lblTotal);
@@ -131,33 +134,33 @@
             // btnAmericano
             // 
             this.btnAmericano.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAmericano.Image = ((System.Drawing.Image)(resources.GetObject("btnAmericano.Image")));
             this.btnAmericano.Location = new System.Drawing.Point(128, 12);
             this.btnAmericano.Name = "btnAmericano";
             this.btnAmericano.Size = new System.Drawing.Size(110, 100);
             this.btnAmericano.TabIndex = 7;
-            this.btnAmericano.Text = "Americano";
             this.btnAmericano.UseVisualStyleBackColor = true;
             this.btnAmericano.Click += new System.EventHandler(this.btnAmericano_Click);
             // 
             // btnCapuchino
             // 
             this.btnCapuchino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapuchino.Image = ((System.Drawing.Image)(resources.GetObject("btnCapuchino.Image")));
             this.btnCapuchino.Location = new System.Drawing.Point(244, 12);
             this.btnCapuchino.Name = "btnCapuchino";
             this.btnCapuchino.Size = new System.Drawing.Size(110, 100);
             this.btnCapuchino.TabIndex = 8;
-            this.btnCapuchino.Text = "Capuchino";
             this.btnCapuchino.UseVisualStyleBackColor = true;
             this.btnCapuchino.Click += new System.EventHandler(this.btnCapuchino_Click);
             // 
             // btnLatte
             // 
             this.btnLatte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLatte.Image = ((System.Drawing.Image)(resources.GetObject("btnLatte.Image")));
             this.btnLatte.Location = new System.Drawing.Point(360, 12);
             this.btnLatte.Name = "btnLatte";
             this.btnLatte.Size = new System.Drawing.Size(110, 100);
             this.btnLatte.TabIndex = 9;
-            this.btnLatte.Text = "Latte";
             this.btnLatte.UseVisualStyleBackColor = true;
             this.btnLatte.Click += new System.EventHandler(this.btnLatte_Click);
             // 
@@ -252,11 +255,11 @@
             // btnMocaccino
             // 
             this.btnMocaccino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMocaccino.Image = ((System.Drawing.Image)(resources.GetObject("btnMocaccino.Image")));
             this.btnMocaccino.Location = new System.Drawing.Point(12, 118);
             this.btnMocaccino.Name = "btnMocaccino";
             this.btnMocaccino.Size = new System.Drawing.Size(110, 100);
             this.btnMocaccino.TabIndex = 18;
-            this.btnMocaccino.Text = "Mocaccino";
             this.btnMocaccino.UseVisualStyleBackColor = true;
             this.btnMocaccino.Click += new System.EventHandler(this.btnMocaccino_Click);
             // 
@@ -282,6 +285,16 @@
             this.btnMuffin.UseVisualStyleBackColor = true;
             this.btnMuffin.Click += new System.EventHandler(this.btnMuffin_Click);
             // 
+            // btnAbrirCocina
+            // 
+            this.btnAbrirCocina.Location = new System.Drawing.Point(264, 416);
+            this.btnAbrirCocina.Name = "btnAbrirCocina";
+            this.btnAbrirCocina.Size = new System.Drawing.Size(48, 21);
+            this.btnAbrirCocina.TabIndex = 6;
+            this.btnAbrirCocina.Text = "Cocina";
+            this.btnAbrirCocina.UseVisualStyleBackColor = true;
+            this.btnAbrirCocina.Click += new System.EventHandler(this.btnAbrirCocina_Click);
+            // 
             // FrmCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,7 +319,7 @@
             this.Controls.Add(this.btnCroissant);
             this.Controls.Add(this.btnCafe);
             this.Name = "FrmCaja";
-            this.Text = "Form1";
+            this.Text = "El Buen Granito";
             this.Load += new System.EventHandler(this.FrmCaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.pnl1.ResumeLayout(false);
@@ -338,6 +351,7 @@
         private System.Windows.Forms.Button btnMocaccino;
         private System.Windows.Forms.Button btnEmpanada;
         private System.Windows.Forms.Button btnMuffin;
+        private System.Windows.Forms.Button btnAbrirCocina;
     }
 }
 

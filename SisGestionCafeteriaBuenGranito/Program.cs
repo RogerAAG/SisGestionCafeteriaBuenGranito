@@ -1,11 +1,8 @@
-﻿using GranitoPOS;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+// Ya no necesitamos 'using GranitoPOS;' porque todo está en 'SisGestionCafeteriaBuenGranito'
 
-namespace SisGestionCafeteriaBuenGranito // <--- TU PROYECTO
+namespace SisGestionCafeteriaBuenGranito
 {
     static class Program
     {
@@ -14,9 +11,7 @@ namespace SisGestionCafeteriaBuenGranito // <--- TU PROYECTO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            // Aquí es donde ocurre la magia, debe decir FrmCaja
-            Application.Run(new FrmCaja());
+            Application.Run(new FrmLogin());
         }
     }
 }
