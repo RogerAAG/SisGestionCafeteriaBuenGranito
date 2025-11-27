@@ -26,35 +26,49 @@ namespace SisGestionCafeteriaBuenGranito
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text.Trim();
-            string clave = txtPassword.Text;
+            string dni = txtDni.Text;
+            string pass = txtPassword.Text;
 
-            // Validación simple (por ahora hardcodeado, luego se puede conectar a BD)
-            if (ValidarUsuario(usuario, clave))
+            if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(pass))
             {
-                // Login correcto
-                MessageBox.Show("Bienvenido " + usuario, "Acceso concedido",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Por favor complete todos los campos.");
+                return;
+            }
 
-                this.Hide(); // oculto el login
+            // Llamamos a la lógica que creamos
+            UsuarioLogica logica = new UsuarioLogica();
+            var usuario = logica.Autenticar(dni, pass);
 
-                // Aquí luego usarás tu formulario principal, por ejemplo FrmPrincipal
-                using (var frm = new FrmCaja())
+            if (usuario != null)
+            {
+                MessageBox.Show($"¡Bienvenido, {usuario.Nombre}!", "Acceso Correcto");
+
+                // ESCONDER LOGIN Y ABRIR FORMULARIO SEGÚN ROL
+                this.Hide();
+
+                if (usuario.IdRol == 1) // Administrador
                 {
-                    frm.ShowDialog(); // muestro la ventana principal
+                    new FrmAdmin().Show();
                 }
-
-                this.Close(); // cierro el login cuando se cierre el principal
+                else if (usuario.IdRol == 2) // Vendedor/Cajero
+                {
+                    new FrmCaja().Show();
+                }
+                else if (usuario.IdRol == 3) // Cocinero
+                {
+                    new FrmCocina().Show();
+                }
             }
             else
             {
-                // Login incorrecto
-                MessageBox.Show("Usuario o contraseña incorrectos.", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                txtPassword.Clear();
-                txtPassword.Focus();
+                MessageBox.Show("DNI o Contraseña incorrectos.", "Error de Acceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCrearCuenta_Click(object sender, EventArgs e)
+        {
+            FrmRegistro registro = new FrmRegistro();
+            registro.ShowDialog(); // ShowDialog bloquea el login hasta que cierres el registro
         }
     }
 }

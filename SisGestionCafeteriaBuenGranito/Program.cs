@@ -11,7 +11,23 @@ namespace SisGestionCafeteriaBuenGranito
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+
+            // --- TEST DE CONEXIÓN ---
+            try
+            {
+                using (var con = ConexionDB.ObtenerConexion())
+                {
+                    MessageBox.Show("¡Conexión Exitosa con SQL Server!", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("FALLÓ LA CONEXIÓN:\n" + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Si falla, no arranca la app
+            }
+            // ------------------------
+
+            Application.Run(new FrmLogin()); // O FrmLogin cuando lo tengas
         }
     }
 }
