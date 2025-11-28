@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AdminLogica.cs" />
     <Compile Include="CajaLogica.cs" />
+    <Compile Include="CocinaLogica.cs" />
     <Compile Include="ConexionDB.cs" />
     <Compile Include="FrmAdmin.cs">
       <SubType>Form</SubType>

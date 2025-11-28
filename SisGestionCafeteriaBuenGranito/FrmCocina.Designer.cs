@@ -28,33 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanelPedidos = new System.Windows.Forms.FlowLayoutPanel();
-            this.timerRefresco = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(64)))), ((int)(((byte)(43)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(128, 450);
+            this.panel1.Size = new System.Drawing.Size(800, 62);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanelPedidos
             // 
+            this.flowLayoutPanelPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanelPedidos.AutoScroll = true;
-            this.flowLayoutPanelPedidos.Location = new System.Drawing.Point(134, -1);
+            this.flowLayoutPanelPedidos.Location = new System.Drawing.Point(0, 60);
             this.flowLayoutPanelPedidos.Name = "flowLayoutPanelPedidos";
-            this.flowLayoutPanelPedidos.Size = new System.Drawing.Size(668, 454);
+            this.flowLayoutPanelPedidos.Size = new System.Drawing.Size(800, 390);
             this.flowLayoutPanelPedidos.TabIndex = 1;
             // 
-            // timerRefresco
+            // label1
             // 
-            this.timerRefresco.Enabled = true;
-            this.timerRefresco.Interval = 3000;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(232)))), ((int)(((byte)(208)))));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(299, 36);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "PEDIDOS PENDIENTES";
             // 
             // FrmCocina
             // 
@@ -67,6 +77,8 @@
             this.Name = "FrmCocina";
             this.Text = "Cocina";
             this.Load += new System.EventHandler(this.FrmCocina_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -75,6 +87,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPedidos;
-        private System.Windows.Forms.Timer timerRefresco;
+        private System.Windows.Forms.Label label1;
     }
 }

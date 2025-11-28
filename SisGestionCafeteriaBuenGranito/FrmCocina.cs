@@ -12,32 +12,105 @@ namespace SisGestionCafeteriaBuenGranito
 {
     public partial class FrmCocina : Form
     {
+        private CocinaLogica logica = new CocinaLogica();
+        private Timer timerRefresco = new Timer();
         public FrmCocina()
         {
             InitializeComponent();
+            ConfigurarDiseño();
+            ConfigurarTimer();
         }
-        private void CargarPedidos()
+        private void ConfigurarDiseño()
         {
-            // Detenemos el pintado para que no parpadee
-            flowLayoutPanelPedidos.SuspendLayout();
+            // Asegúrate de tener un FlowLayoutPanel llamado 'flowLayoutPanelPedidos' en el diseño
+            // Si no lo tienes, agrégalo desde el cuadro de herramientas
+            this.flowLayoutPanelPedidos.AutoScroll = true;
+            this.Text = "KDS - Sistema de Cocina";
+        }
+        private void ConfigurarTimer()
+        {
+            timerRefresco.Interval = 5000; // Refrescar cada 5 segundos
+            timerRefresco.Tick += TimerRefresco_Tick;
+            timerRefresco.Start();
+        }
+        private void TimerRefresco_Tick(object sender, EventArgs e)
+        {
+            CargarComandas();
+        }
+        // CARGA Y PINTADO DE TARJETAS (RF-07)
+        private void CargarComandas()
+        {
+            var pedidos = logica.ObtenerComandasPendientes();
 
-            // Limpiamos todo para volver a dibujar (método simple para prototipo)
+            // Optimización simple: Si la cantidad de pedidos no cambió, no repintamos (evita parpadeo)
+            if (pedidos.Count == flowLayoutPanelPedidos.Controls.Count) return;
+
+            flowLayoutPanelPedidos.SuspendLayout(); // Congelar pantalla
             flowLayoutPanelPedidos.Controls.Clear();
 
-            // Filtramos solo los que están "En Preparacion" (RF-04 y FIFO)
-            var pedidosPendientes = RepositorioPedidos.ColaCocina
-                                    .Where(x => x.Estado == "En Preparacion")
-                                    .OrderBy(x => x.HoraPedido) // FIFO: El más viejo primero
-                                    .ToList();
-
-            foreach (var pedido in pedidosPendientes)
+            foreach (var pedido in pedidos)
             {
-                // Dibujamos una "Tarjeta" por cada pedido
-                Panel tarjeta = CrearTarjetaPedido(pedido);
+                Panel tarjeta = CrearTarjetaVisual(pedido);
                 flowLayoutPanelPedidos.Controls.Add(tarjeta);
             }
 
-            flowLayoutPanelPedidos.ResumeLayout();
+            flowLayoutPanelPedidos.ResumeLayout(); // Descongelar
+        }
+
+        // DISEÑO DE LA TARJETA (Idéntico a tu informe visual)
+        private Panel CrearTarjetaVisual(CocinaLogica.PedidoCocina pedido)
+        {
+            Panel pnl = new Panel
+            {
+                Size = new Size(250, 300),
+                BackColor = Color.White,
+                BorderStyle = BorderStyle.FixedSingle,
+                Margin = new Padding(10)
+            };
+
+            // Encabezado Turno
+            Label lblTurno = new Label
+            {
+                Text = $"TURNO: {pedido.NumeroTurno}",
+                Dock = DockStyle.Top,
+                Height = 40,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Arial", 14, FontStyle.Bold),
+                BackColor = Color.Orange, // Color característico del informe
+                ForeColor = Color.White
+            };
+
+            // Lista de Productos
+            ListBox lstItems = new ListBox
+            {
+                Dock = DockStyle.Fill,
+                Font = new Font("Consolas", 11),
+                BorderStyle = BorderStyle.None,
+                SelectionMode = SelectionMode.None
+            };
+            foreach (var item in pedido.Productos)
+            {
+                lstItems.Items.Add(item);
+            }
+
+            // Botón "Marcar Listo" (RF-08)
+            Button btnListo = new Button
+            {
+                Text = "MARCAR LISTO",
+                Dock = DockStyle.Bottom,
+                Height = 45,
+                BackColor = Color.Green,
+                ForeColor = Color.White,
+                Font = new Font("Arial", 10, FontStyle.Bold),
+                Tag = pedido.IdPedido // Guardamos el ID oculto en el botón
+            };
+            btnListo.Click += BtnListo_Click;
+
+            pnl.Controls.Add(lstItems);
+            pnl.Controls.Add(btnListo);
+            pnl.Controls.Add(lblTurno);
+
+            return pnl;
         }
 
         private Panel CrearTarjetaPedido(PedidoConfirmado pedido)
@@ -91,22 +164,18 @@ namespace SisGestionCafeteriaBuenGranito
         private void BtnListo_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            string turno = btn.Tag.ToString();
+            int idPedido = (int)btn.Tag;
 
-            // Buscar el pedido en la "Base de Datos" y cambiar estado
-            var pedido = RepositorioPedidos.ColaCocina.FirstOrDefault(p => p.NumeroTurno == turno);
-            if (pedido != null)
+            if (logica.MarcarPedidoListo(idPedido))
             {
-                pedido.Estado = "Listo"; // Esto hará que desaparezca de la cocina en el próximo Tick
-                // Aquí podrías disparar un sonido o actualizar la Pantalla de Cliente
+                // Forzamos recarga inmediata para que desaparezca
+                flowLayoutPanelPedidos.Controls.Clear();
+                CargarComandas();
             }
-
-            // Forzar recarga inmediata visual
-            CargarPedidos();
         }
         private void FrmCocina_Load(object sender, EventArgs e)
         {
-            CargarPedidos();
+            CargarComandas();
         }
     }
 }

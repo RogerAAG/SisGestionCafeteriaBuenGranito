@@ -56,6 +56,8 @@
             this.btnCafe = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lstResultados = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.pnl1.SuspendLayout();
             this.SuspendLayout();
@@ -64,10 +66,10 @@
             // 
             this.dgvPedido.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(232)))), ((int)(((byte)(208)))));
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedido.Location = new System.Drawing.Point(19, 13);
+            this.dgvPedido.Location = new System.Drawing.Point(19, 49);
             this.dgvPedido.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPedido.Name = "dgvPedido";
-            this.dgvPedido.Size = new System.Drawing.Size(406, 299);
+            this.dgvPedido.Size = new System.Drawing.Size(406, 268);
             this.dgvPedido.TabIndex = 0;
             // 
             // lblTotal
@@ -109,6 +111,7 @@
             // pnl1
             // 
             this.pnl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(64)))), ((int)(((byte)(43)))));
+            this.pnl1.Controls.Add(this.label1);
             this.pnl1.Controls.Add(this.lblVuelto);
             this.pnl1.Controls.Add(this.lblMontodePago);
             this.pnl1.Controls.Add(this.btnCancelar);
@@ -188,7 +191,7 @@
             this.btnMuffin.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_22_21_PM;
             this.btnMuffin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMuffin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMuffin.Location = new System.Drawing.Point(17, 302);
+            this.btnMuffin.Location = new System.Drawing.Point(15, 353);
             this.btnMuffin.Margin = new System.Windows.Forms.Padding(4);
             this.btnMuffin.Name = "btnMuffin";
             this.btnMuffin.Size = new System.Drawing.Size(88, 88);
@@ -201,7 +204,7 @@
             this.btnEmpanada.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_15_36_PM;
             this.btnEmpanada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEmpanada.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpanada.Location = new System.Drawing.Point(399, 12);
+            this.btnEmpanada.Location = new System.Drawing.Point(397, 63);
             this.btnEmpanada.Margin = new System.Windows.Forms.Padding(4);
             this.btnEmpanada.Name = "btnEmpanada";
             this.btnEmpanada.Size = new System.Drawing.Size(88, 88);
@@ -214,7 +217,7 @@
             this.btnMocaccino.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_30_29_PM;
             this.btnMocaccino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMocaccino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMocaccino.Location = new System.Drawing.Point(112, 109);
+            this.btnMocaccino.Location = new System.Drawing.Point(110, 160);
             this.btnMocaccino.Margin = new System.Windows.Forms.Padding(4);
             this.btnMocaccino.Name = "btnMocaccino";
             this.btnMocaccino.Size = new System.Drawing.Size(88, 89);
@@ -227,7 +230,7 @@
             this.btnSandwichPollo.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_06_31_PM;
             this.btnSandwichPollo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSandwichPollo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSandwichPollo.Location = new System.Drawing.Point(401, 208);
+            this.btnSandwichPollo.Location = new System.Drawing.Point(399, 259);
             this.btnSandwichPollo.Margin = new System.Windows.Forms.Padding(4);
             this.btnSandwichPollo.Name = "btnSandwichPollo";
             this.btnSandwichPollo.Size = new System.Drawing.Size(86, 88);
@@ -240,7 +243,7 @@
             this.btnGaseosa.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_05_04_PM;
             this.btnGaseosa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGaseosa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGaseosa.Location = new System.Drawing.Point(305, 206);
+            this.btnGaseosa.Location = new System.Drawing.Point(303, 257);
             this.btnGaseosa.Margin = new System.Windows.Forms.Padding(4);
             this.btnGaseosa.Name = "btnGaseosa";
             this.btnGaseosa.Size = new System.Drawing.Size(87, 88);
@@ -253,7 +256,7 @@
             this.btnAguaMineral.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_03_00_PM;
             this.btnAguaMineral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAguaMineral.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAguaMineral.Location = new System.Drawing.Point(209, 208);
+            this.btnAguaMineral.Location = new System.Drawing.Point(207, 259);
             this.btnAguaMineral.Margin = new System.Windows.Forms.Padding(4);
             this.btnAguaMineral.Name = "btnAguaMineral";
             this.btnAguaMineral.Size = new System.Drawing.Size(88, 88);
@@ -266,7 +269,7 @@
             this.btnIcedCoffee.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_01_39_PM;
             this.btnIcedCoffee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIcedCoffee.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIcedCoffee.Location = new System.Drawing.Point(304, 109);
+            this.btnIcedCoffee.Location = new System.Drawing.Point(302, 160);
             this.btnIcedCoffee.Margin = new System.Windows.Forms.Padding(4);
             this.btnIcedCoffee.Name = "btnIcedCoffee";
             this.btnIcedCoffee.Size = new System.Drawing.Size(87, 87);
@@ -279,7 +282,7 @@
             this.btnFrapuccino.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_00_25_PM;
             this.btnFrapuccino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFrapuccino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFrapuccino.Location = new System.Drawing.Point(14, 206);
+            this.btnFrapuccino.Location = new System.Drawing.Point(12, 257);
             this.btnFrapuccino.Margin = new System.Windows.Forms.Padding(4);
             this.btnFrapuccino.Name = "btnFrapuccino";
             this.btnFrapuccino.Size = new System.Drawing.Size(87, 88);
@@ -292,7 +295,7 @@
             this.btnJugo.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_58_50_PM;
             this.btnJugo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnJugo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJugo.Location = new System.Drawing.Point(113, 208);
+            this.btnJugo.Location = new System.Drawing.Point(111, 259);
             this.btnJugo.Margin = new System.Windows.Forms.Padding(4);
             this.btnJugo.Name = "btnJugo";
             this.btnJugo.Size = new System.Drawing.Size(87, 88);
@@ -305,7 +308,7 @@
             this.btnInfusion.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_48_00_PM;
             this.btnInfusion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInfusion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfusion.Location = new System.Drawing.Point(209, 109);
+            this.btnInfusion.Location = new System.Drawing.Point(207, 160);
             this.btnInfusion.Margin = new System.Windows.Forms.Padding(4);
             this.btnInfusion.Name = "btnInfusion";
             this.btnInfusion.Size = new System.Drawing.Size(87, 88);
@@ -318,7 +321,7 @@
             this.btnChocolateCaliente.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_44_55_PM;
             this.btnChocolateCaliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnChocolateCaliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChocolateCaliente.Location = new System.Drawing.Point(13, 110);
+            this.btnChocolateCaliente.Location = new System.Drawing.Point(11, 161);
             this.btnChocolateCaliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnChocolateCaliente.Name = "btnChocolateCaliente";
             this.btnChocolateCaliente.Size = new System.Drawing.Size(88, 88);
@@ -331,7 +334,7 @@
             this.btnLatte.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_30_02_PM;
             this.btnLatte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLatte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLatte.Location = new System.Drawing.Point(304, 12);
+            this.btnLatte.Location = new System.Drawing.Point(302, 63);
             this.btnLatte.Margin = new System.Windows.Forms.Padding(4);
             this.btnLatte.Name = "btnLatte";
             this.btnLatte.Size = new System.Drawing.Size(87, 89);
@@ -344,7 +347,7 @@
             this.btnCapuchino.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_30_15_PM;
             this.btnCapuchino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCapuchino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapuchino.Location = new System.Drawing.Point(209, 12);
+            this.btnCapuchino.Location = new System.Drawing.Point(207, 63);
             this.btnCapuchino.Margin = new System.Windows.Forms.Padding(4);
             this.btnCapuchino.Name = "btnCapuchino";
             this.btnCapuchino.Size = new System.Drawing.Size(87, 89);
@@ -357,7 +360,7 @@
             this.btnAmericano.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_29_47_PM;
             this.btnAmericano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAmericano.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAmericano.Location = new System.Drawing.Point(113, 12);
+            this.btnAmericano.Location = new System.Drawing.Point(111, 63);
             this.btnAmericano.Margin = new System.Windows.Forms.Padding(4);
             this.btnAmericano.Name = "btnAmericano";
             this.btnAmericano.Size = new System.Drawing.Size(87, 89);
@@ -370,7 +373,7 @@
             this.btnCroissant.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_07_44_PM;
             this.btnCroissant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCroissant.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCroissant.Location = new System.Drawing.Point(400, 108);
+            this.btnCroissant.Location = new System.Drawing.Point(398, 159);
             this.btnCroissant.Margin = new System.Windows.Forms.Padding(4);
             this.btnCroissant.Name = "btnCroissant";
             this.btnCroissant.Size = new System.Drawing.Size(87, 88);
@@ -383,7 +386,7 @@
             this.btnCafe.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_29_32_PM;
             this.btnCafe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCafe.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCafe.Location = new System.Drawing.Point(13, 13);
+            this.btnCafe.Location = new System.Drawing.Point(11, 64);
             this.btnCafe.Margin = new System.Windows.Forms.Padding(4);
             this.btnCafe.Name = "btnCafe";
             this.btnCafe.Size = new System.Drawing.Size(88, 89);
@@ -394,7 +397,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(122, 313);
+            this.txtBuscar.Location = new System.Drawing.Point(120, 364);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(211, 31);
             this.txtBuscar.TabIndex = 21;
@@ -404,11 +407,35 @@
             // 
             this.lstResultados.FormattingEnabled = true;
             this.lstResultados.ItemHeight = 16;
-            this.lstResultados.Location = new System.Drawing.Point(122, 350);
+            this.lstResultados.Location = new System.Drawing.Point(120, 401);
             this.lstResultados.Name = "lstResultados";
-            this.lstResultados.Size = new System.Drawing.Size(365, 180);
+            this.lstResultados.Size = new System.Drawing.Size(365, 132);
             this.lstResultados.TabIndex = 22;
             this.lstResultados.Click += new System.EventHandler(this.lstResultados_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(114, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(226, 25);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "LISTA DE PRODUCTOS";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(64)))), ((int)(((byte)(43)))));
+            this.label2.Location = new System.Drawing.Point(114, 13);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(247, 36);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "PUNTO DE VENTA";
             // 
             // FrmCaja
             // 
@@ -416,6 +443,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(232)))), ((int)(((byte)(208)))));
             this.ClientSize = new System.Drawing.Size(933, 554);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lstResultados);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnMuffin);
@@ -480,6 +508,8 @@
         private System.Windows.Forms.TextBox txtMontoRecibido;
         private System.Windows.Forms.Label lblVuelto;
         private System.Windows.Forms.Label lblMontodePago;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
