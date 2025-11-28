@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminLogica.cs" />
     <Compile Include="ConexionDB.cs" />
     <Compile Include="FrmAdmin.cs">
       <SubType>Form</SubType>
@@ -82,6 +83,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioLogica.cs" />
+    <EmbeddedResource Include="FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCocina.resx">
       <DependentUpon>FrmCocina.cs</DependentUpon>
     </EmbeddedResource>
