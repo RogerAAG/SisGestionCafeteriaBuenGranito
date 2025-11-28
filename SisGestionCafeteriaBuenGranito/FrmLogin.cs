@@ -13,9 +13,31 @@ namespace SisGestionCafeteriaBuenGranito
 {
     public partial class FrmLogin : Form
     {
+        // 1. CÓDIGO PARA REDONDEAR BORDES (Llamada a DLL de Windows)
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
+
+        // 2. CÓDIGO PARA MOVER LA VENTANA SIN BARRA DE TÍTULO
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
         public FrmLogin()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
 
         private bool ValidarUsuario(string usuario, string clave)
@@ -102,10 +124,6 @@ namespace SisGestionCafeteriaBuenGranito
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]// Dll para manipular la interfaz de usuario
-        private extern static void ReleaseCapture();// Función para liberar la captura
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]// Dll para manipular la interfaz de usuario
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void FrmLogin_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -114,7 +132,7 @@ namespace SisGestionCafeteriaBuenGranito
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
         {

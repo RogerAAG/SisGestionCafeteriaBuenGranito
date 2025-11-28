@@ -11,8 +11,6 @@ namespace SisGestionCafeteriaBuenGranito
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            // --- TEST DE CONEXIÓN ---
             try
             {
                 using (var con = ConexionDB.ObtenerConexion())
@@ -23,11 +21,11 @@ namespace SisGestionCafeteriaBuenGranito
             catch (Exception ex)
             {
                 MessageBox.Show("FALLÓ LA CONEXIÓN:\n" + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Si falla, no arranca la app
+                return; 
             }
             // ------------------------
 
-            Application.Run(new FrmLogin()); // O FrmLogin cuando lo tengas
+            Application.Run(new FrmLogin());
         }
     }
 }

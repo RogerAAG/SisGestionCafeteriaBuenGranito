@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace SisGestionCafeteriaBuenGranito
@@ -11,18 +12,35 @@ namespace SisGestionCafeteriaBuenGranito
         private int _idUsuarioActual;
         private CajaLogica logica = new CajaLogica();
         private List<CajaLogica.ItemCarrito> carrito = new List<CajaLogica.ItemCarrito>();
+        // 1. CÓDIGO PARA REDONDEAR BORDES (Llamada a DLL de Windows)
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
 
-        // CONSTRUCTOR PRINCIPAL: Recibe el ID del usuario logueado
+        // 2. CÓDIGO PARA MOVER LA VENTANA SIN BARRA DE TÍTULO
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
         public FrmCaja(int idUsuario)
         {
             InitializeComponent();
             _idUsuarioActual = idUsuario;
             ConfigurarDiseño();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
-
-        // CONSTRUCTOR POR DEFECTO: Llama al principal con un ID genérico (Para que no falle el diseñador)
         public FrmCaja() : this(1) { }
-
         private void ConfigurarDiseño()
         {
             dgvPedido.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -30,9 +48,6 @@ namespace SisGestionCafeteriaBuenGranito
             dgvPedido.ReadOnly = true;
             lstResultados.Visible = false;
         }
-        // ---------------------------------------------------------
-        // 1. LÓGICA DE AGREGAR PRODUCTOS (Botones + Buscador)
-        // ---------------------------------------------------------
         private void AgregarAlCarrito(CajaLogica.ItemCarrito producto)
         {
             var itemEnCarrito = carrito.FirstOrDefault(x => x.IdProducto == producto.IdProducto);
@@ -41,15 +56,10 @@ namespace SisGestionCafeteriaBuenGranito
                 itemEnCarrito.Cantidad++;
             else
                 carrito.Add(producto);
-
             ActualizarVista();
-
-            // Limpiar búsqueda
             txtBuscar.Clear();
             lstResultados.Visible = false;
         }
-        // --- MÉTODOS AUXILIARES ---
-
         private void ActualizarVista()
         {
             dgvPedido.DataSource = null;
@@ -60,7 +70,7 @@ namespace SisGestionCafeteriaBuenGranito
             decimal total = carrito.Sum(x => x.Subtotal);
             lblTotal.Text = $"S/ {total:N2}";
 
-            CalcularVuelto(); // Recalcular vuelto si cambia el total
+            CalcularVuelto();
         }
         private void CalcularVuelto()
         {
@@ -74,10 +84,8 @@ namespace SisGestionCafeteriaBuenGranito
             }
         }
 
-        // Este método conecta tus botones con la lógica
         private void BtnProducto_Click(string nombreExactoEnBD)
         {
-            // Usamos la lógica para buscar el precio REAL en la base de datos
             var productoEncontrado = logica.BuscarProducto(nombreExactoEnBD);
 
             if (productoEncontrado != null)
@@ -90,12 +98,9 @@ namespace SisGestionCafeteriaBuenGranito
             }
         }
 
-        // --- BOTONES DE PRODUCTOS ---
-        // Mantengo tus botones individuales tal como los creaste
-
         private void btnCafe_MouseClick(object sender, MouseEventArgs e)
         {
-            BtnProducto_Click("Café Americano");
+            BtnProducto_Click("Espresso");
         }
 
         private void btnCroissant_Click(object sender, EventArgs e)
@@ -150,7 +155,7 @@ namespace SisGestionCafeteriaBuenGranito
 
         private void btnAguaMineral_Click(object sender, EventArgs e)
         {
-            BtnProducto_Click("Aagua Mineral");
+            BtnProducto_Click("Agua Mineral");
         }
 
         private void btnGaseosa_Click(object sender, EventArgs e)
@@ -173,8 +178,6 @@ namespace SisGestionCafeteriaBuenGranito
             BtnProducto_Click("Muffin");
         }
 
-        // --- BOTONES DE CONTROL ---
-
         private void btnCobrar_Click(object sender, EventArgs e)
         {
             if (carrito.Count == 0) return;
@@ -183,7 +186,6 @@ namespace SisGestionCafeteriaBuenGranito
             decimal recibido = 0;
             decimal.TryParse(txtMontoRecibido.Text, out recibido);
 
-            // Validación de Pago (RF-04)
             if (recibido < total)
             {
                 MessageBox.Show($"Monto insuficiente. Faltan S/ {(total - recibido):N2}", "Error de Pago");
@@ -220,7 +222,7 @@ namespace SisGestionCafeteriaBuenGranito
         private void btnAbrirCocina_Click(object sender, EventArgs e)
         {
             FrmCocina cocina = new FrmCocina();
-            cocina.Show(); // Usa Show() y no ShowDialog() para poder usar ambos al mismo tiempo
+            cocina.Show();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -237,9 +239,9 @@ namespace SisGestionCafeteriaBuenGranito
             {
                 lstResultados.DataSource = null;
                 lstResultados.DataSource = resultados;
-                lstResultados.DisplayMember = "Nombre"; // Qué mostrar en la lista
+                lstResultados.DisplayMember = "Nombre";
                 lstResultados.Visible = true;
-                lstResultados.BringToFront(); // Que salga encima de todo
+                lstResultados.BringToFront();
             }
         }
 
@@ -269,7 +271,6 @@ namespace SisGestionCafeteriaBuenGranito
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Si el usuario se cambia a la pestaña de entregas (índice 1)
             if (tabControl1.SelectedIndex == 1)
             {
                 CargarPedidosListos();
@@ -297,7 +298,7 @@ namespace SisGestionCafeteriaBuenGranito
                     if (logica.ConfirmarEntrega(idPedido))
                     {
                         MessageBox.Show("Pedido entregado y ciclo cerrado.", "Éxito");
-                        CargarPedidosListos(); // Refrescar lista
+                        CargarPedidosListos();
                     }
                 }
             }
@@ -305,6 +306,28 @@ namespace SisGestionCafeteriaBuenGranito
             {
                 MessageBox.Show("Seleccione un pedido de la lista.", "Atención");
             }
+        }
+    
+        private void tabControl1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+        }
+
+        private void btnCerrarApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -39,22 +39,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtMontoRecibido = new System.Windows.Forms.TextBox();
             this.btnAbrirCocina = new System.Windows.Forms.Button();
-            this.btnMuffin = new System.Windows.Forms.Button();
-            this.btnEmpanada = new System.Windows.Forms.Button();
-            this.btnMocaccino = new System.Windows.Forms.Button();
-            this.btnSandwichPollo = new System.Windows.Forms.Button();
-            this.btnGaseosa = new System.Windows.Forms.Button();
-            this.btnAguaMineral = new System.Windows.Forms.Button();
-            this.btnIcedCoffee = new System.Windows.Forms.Button();
-            this.btnFrapuccino = new System.Windows.Forms.Button();
-            this.btnJugo = new System.Windows.Forms.Button();
-            this.btnInfusion = new System.Windows.Forms.Button();
-            this.btnChocolateCaliente = new System.Windows.Forms.Button();
-            this.btnLatte = new System.Windows.Forms.Button();
-            this.btnCapuchino = new System.Windows.Forms.Button();
-            this.btnAmericano = new System.Windows.Forms.Button();
-            this.btnCroissant = new System.Windows.Forms.Button();
-            this.btnCafe = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lstResultados = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,12 +48,38 @@
             this.dgvEntregas = new System.Windows.Forms.DataGridView();
             this.btnEntregarPedido = new System.Windows.Forms.Button();
             this.btnRefrescarEntregas = new System.Windows.Forms.Button();
+            this.btnCafe = new System.Windows.Forms.Button();
+            this.btnCroissant = new System.Windows.Forms.Button();
+            this.btnMuffin = new System.Windows.Forms.Button();
+            this.btnAmericano = new System.Windows.Forms.Button();
+            this.btnEmpanada = new System.Windows.Forms.Button();
+            this.btnCapuchino = new System.Windows.Forms.Button();
+            this.btnMocaccino = new System.Windows.Forms.Button();
+            this.btnLatte = new System.Windows.Forms.Button();
+            this.btnSandwichPollo = new System.Windows.Forms.Button();
+            this.btnInfusion = new System.Windows.Forms.Button();
+            this.btnGaseosa = new System.Windows.Forms.Button();
+            this.btnJugo = new System.Windows.Forms.Button();
+            this.btnChocolateCaliente = new System.Windows.Forms.Button();
+            this.btnFrapuccino = new System.Windows.Forms.Button();
+            this.btnAguaMineral = new System.Windows.Forms.Button();
+            this.btnIcedCoffee = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrarApp = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.pnl1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarApp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPedido
@@ -85,12 +95,12 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTotal.Location = new System.Drawing.Point(153, 330);
+            this.lblTotal.Location = new System.Drawing.Point(153, 325);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(148, 38);
+            this.lblTotal.Size = new System.Drawing.Size(151, 45);
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "S/. 00.00";
             // 
@@ -133,18 +143,19 @@
             this.pnl1.Controls.Add(this.btnCobrar);
             this.pnl1.Controls.Add(this.lblTotal);
             this.pnl1.Controls.Add(this.dgvPedido);
-            this.pnl1.Location = new System.Drawing.Point(607, 12);
+            this.pnl1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnl1.Location = new System.Drawing.Point(498, 3);
             this.pnl1.Margin = new System.Windows.Forms.Padding(4);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(438, 554);
+            this.pnl1.Size = new System.Drawing.Size(438, 565);
             this.pnl1.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(91, 13);
+            this.label1.Location = new System.Drawing.Point(109, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(226, 25);
@@ -154,12 +165,12 @@
             // lblVuelto
             // 
             this.lblVuelto.AutoSize = true;
-            this.lblVuelto.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVuelto.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVuelto.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblVuelto.Location = new System.Drawing.Point(143, 488);
+            this.lblVuelto.Location = new System.Drawing.Point(146, 488);
             this.lblVuelto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVuelto.Name = "lblVuelto";
-            this.lblVuelto.Size = new System.Drawing.Size(158, 25);
+            this.lblVuelto.Size = new System.Drawing.Size(158, 30);
             this.lblVuelto.TabIndex = 10;
             this.lblVuelto.Text = "Vuelto: S/ 0.00";
             // 
@@ -168,7 +179,7 @@
             this.lblMontodePago.AutoSize = true;
             this.lblMontodePago.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontodePago.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMontodePago.Location = new System.Drawing.Point(64, 445);
+            this.lblMontodePago.Location = new System.Drawing.Point(64, 449);
             this.lblMontodePago.Name = "lblMontodePago";
             this.lblMontodePago.Size = new System.Drawing.Size(90, 21);
             this.lblMontodePago.TabIndex = 9;
@@ -191,7 +202,7 @@
             // 
             this.txtMontoRecibido.Location = new System.Drawing.Point(160, 447);
             this.txtMontoRecibido.Name = "txtMontoRecibido";
-            this.txtMontoRecibido.Size = new System.Drawing.Size(141, 21);
+            this.txtMontoRecibido.Size = new System.Drawing.Size(141, 27);
             this.txtMontoRecibido.TabIndex = 7;
             this.txtMontoRecibido.TextChanged += new System.EventHandler(this.txtMontoRecibido_TextChanged);
             // 
@@ -201,7 +212,7 @@
             this.btnAbrirCocina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbrirCocina.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbrirCocina.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnAbrirCocina.Location = new System.Drawing.Point(371, 514);
+            this.btnAbrirCocina.Location = new System.Drawing.Point(367, 532);
             this.btnAbrirCocina.Margin = new System.Windows.Forms.Padding(4);
             this.btnAbrirCocina.Name = "btnAbrirCocina";
             this.btnAbrirCocina.Size = new System.Drawing.Size(63, 27);
@@ -209,6 +220,150 @@
             this.btnAbrirCocina.Text = "Cocina";
             this.btnAbrirCocina.UseVisualStyleBackColor = true;
             this.btnAbrirCocina.Click += new System.EventHandler(this.btnAbrirCocina_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(117, 363);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(211, 31);
+            this.txtBuscar.TabIndex = 21;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // lstResultados
+            // 
+            this.lstResultados.FormattingEnabled = true;
+            this.lstResultados.ItemHeight = 19;
+            this.lstResultados.Location = new System.Drawing.Point(117, 400);
+            this.lstResultados.Name = "lstResultados";
+            this.lstResultados.Size = new System.Drawing.Size(365, 156);
+            this.lstResultados.TabIndex = 22;
+            this.lstResultados.Click += new System.EventHandler(this.lstResultados_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(154)))), ((int)(((byte)(107)))));
+            this.label2.Location = new System.Drawing.Point(124, 12);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(247, 36);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "PUNTO DE VENTA";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(0, 37);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(947, 603);
+            this.tabControl1.TabIndex = 24;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.OldLace;
+            this.tabPage1.Controls.Add(this.pictureBox1);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.pnl1);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.lstResultados);
+            this.tabPage1.Controls.Add(this.btnCafe);
+            this.tabPage1.Controls.Add(this.txtBuscar);
+            this.tabPage1.Controls.Add(this.btnCroissant);
+            this.tabPage1.Controls.Add(this.btnMuffin);
+            this.tabPage1.Controls.Add(this.btnAmericano);
+            this.tabPage1.Controls.Add(this.btnEmpanada);
+            this.tabPage1.Controls.Add(this.btnCapuchino);
+            this.tabPage1.Controls.Add(this.btnMocaccino);
+            this.tabPage1.Controls.Add(this.btnLatte);
+            this.tabPage1.Controls.Add(this.btnSandwichPollo);
+            this.tabPage1.Controls.Add(this.btnInfusion);
+            this.tabPage1.Controls.Add(this.btnGaseosa);
+            this.tabPage1.Controls.Add(this.btnJugo);
+            this.tabPage1.Controls.Add(this.btnChocolateCaliente);
+            this.tabPage1.Controls.Add(this.btnFrapuccino);
+            this.tabPage1.Controls.Add(this.btnAguaMineral);
+            this.tabPage1.Controls.Add(this.btnIcedCoffee);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(939, 571);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Punto de Venta";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnRefrescarEntregas);
+            this.tabPage2.Controls.Add(this.btnEntregarPedido);
+            this.tabPage2.Controls.Add(this.dgvEntregas);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(939, 547);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Entregas / Despacho";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgvEntregas
+            // 
+            this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEntregas.Location = new System.Drawing.Point(30, 32);
+            this.dgvEntregas.Name = "dgvEntregas";
+            this.dgvEntregas.Size = new System.Drawing.Size(398, 401);
+            this.dgvEntregas.TabIndex = 0;
+            // 
+            // btnEntregarPedido
+            // 
+            this.btnEntregarPedido.Location = new System.Drawing.Point(662, 221);
+            this.btnEntregarPedido.Name = "btnEntregarPedido";
+            this.btnEntregarPedido.Size = new System.Drawing.Size(130, 66);
+            this.btnEntregarPedido.TabIndex = 1;
+            this.btnEntregarPedido.Text = "EntregarPedido";
+            this.btnEntregarPedido.UseVisualStyleBackColor = true;
+            this.btnEntregarPedido.Click += new System.EventHandler(this.btnEntregarPedido_Click);
+            // 
+            // btnRefrescarEntregas
+            // 
+            this.btnRefrescarEntregas.Location = new System.Drawing.Point(662, 311);
+            this.btnRefrescarEntregas.Name = "btnRefrescarEntregas";
+            this.btnRefrescarEntregas.Size = new System.Drawing.Size(130, 66);
+            this.btnRefrescarEntregas.TabIndex = 2;
+            this.btnRefrescarEntregas.Text = "RefrescarEntregas";
+            this.btnRefrescarEntregas.UseVisualStyleBackColor = true;
+            this.btnRefrescarEntregas.Click += new System.EventHandler(this.btnRefrescarEntregas_Click);
+            // 
+            // btnCafe
+            // 
+            this.btnCafe.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_29_32_PM;
+            this.btnCafe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCafe.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCafe.Location = new System.Drawing.Point(8, 63);
+            this.btnCafe.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCafe.Name = "btnCafe";
+            this.btnCafe.Size = new System.Drawing.Size(88, 89);
+            this.btnCafe.TabIndex = 2;
+            this.btnCafe.UseVisualStyleBackColor = true;
+            this.btnCafe.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnCafe_MouseClick);
+            // 
+            // btnCroissant
+            // 
+            this.btnCroissant.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_07_44_PM;
+            this.btnCroissant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCroissant.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCroissant.Location = new System.Drawing.Point(395, 158);
+            this.btnCroissant.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCroissant.Name = "btnCroissant";
+            this.btnCroissant.Size = new System.Drawing.Size(87, 88);
+            this.btnCroissant.TabIndex = 3;
+            this.btnCroissant.UseVisualStyleBackColor = true;
+            this.btnCroissant.Click += new System.EventHandler(this.btnCroissant_Click);
             // 
             // btnMuffin
             // 
@@ -223,6 +378,19 @@
             this.btnMuffin.UseVisualStyleBackColor = true;
             this.btnMuffin.Click += new System.EventHandler(this.btnMuffin_Click);
             // 
+            // btnAmericano
+            // 
+            this.btnAmericano.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_29_47_PM;
+            this.btnAmericano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAmericano.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAmericano.Location = new System.Drawing.Point(108, 62);
+            this.btnAmericano.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAmericano.Name = "btnAmericano";
+            this.btnAmericano.Size = new System.Drawing.Size(87, 89);
+            this.btnAmericano.TabIndex = 7;
+            this.btnAmericano.UseVisualStyleBackColor = true;
+            this.btnAmericano.Click += new System.EventHandler(this.btnAmericano_Click);
+            // 
             // btnEmpanada
             // 
             this.btnEmpanada.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_15_36_PM;
@@ -235,6 +403,19 @@
             this.btnEmpanada.TabIndex = 19;
             this.btnEmpanada.UseVisualStyleBackColor = true;
             this.btnEmpanada.Click += new System.EventHandler(this.btnEmpanada_Click);
+            // 
+            // btnCapuchino
+            // 
+            this.btnCapuchino.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_30_15_PM;
+            this.btnCapuchino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCapuchino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapuchino.Location = new System.Drawing.Point(204, 62);
+            this.btnCapuchino.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCapuchino.Name = "btnCapuchino";
+            this.btnCapuchino.Size = new System.Drawing.Size(87, 89);
+            this.btnCapuchino.TabIndex = 8;
+            this.btnCapuchino.UseVisualStyleBackColor = true;
+            this.btnCapuchino.Click += new System.EventHandler(this.btnCapuchino_Click);
             // 
             // btnMocaccino
             // 
@@ -249,6 +430,19 @@
             this.btnMocaccino.UseVisualStyleBackColor = true;
             this.btnMocaccino.Click += new System.EventHandler(this.btnMocaccino_Click);
             // 
+            // btnLatte
+            // 
+            this.btnLatte.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_30_02_PM;
+            this.btnLatte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLatte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLatte.Location = new System.Drawing.Point(299, 62);
+            this.btnLatte.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLatte.Name = "btnLatte";
+            this.btnLatte.Size = new System.Drawing.Size(87, 89);
+            this.btnLatte.TabIndex = 9;
+            this.btnLatte.UseVisualStyleBackColor = true;
+            this.btnLatte.Click += new System.EventHandler(this.btnLatte_Click);
+            // 
             // btnSandwichPollo
             // 
             this.btnSandwichPollo.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_06_31_PM;
@@ -262,6 +456,19 @@
             this.btnSandwichPollo.UseVisualStyleBackColor = true;
             this.btnSandwichPollo.Click += new System.EventHandler(this.btnSandwichPollo_Click);
             // 
+            // btnInfusion
+            // 
+            this.btnInfusion.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_48_00_PM;
+            this.btnInfusion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInfusion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfusion.Location = new System.Drawing.Point(204, 159);
+            this.btnInfusion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInfusion.Name = "btnInfusion";
+            this.btnInfusion.Size = new System.Drawing.Size(87, 88);
+            this.btnInfusion.TabIndex = 11;
+            this.btnInfusion.UseVisualStyleBackColor = true;
+            this.btnInfusion.Click += new System.EventHandler(this.btnInfusion_Click);
+            // 
             // btnGaseosa
             // 
             this.btnGaseosa.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_05_04_PM;
@@ -274,6 +481,45 @@
             this.btnGaseosa.TabIndex = 16;
             this.btnGaseosa.UseVisualStyleBackColor = true;
             this.btnGaseosa.Click += new System.EventHandler(this.btnGaseosa_Click);
+            // 
+            // btnJugo
+            // 
+            this.btnJugo.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_58_50_PM;
+            this.btnJugo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnJugo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJugo.Location = new System.Drawing.Point(108, 258);
+            this.btnJugo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnJugo.Name = "btnJugo";
+            this.btnJugo.Size = new System.Drawing.Size(87, 88);
+            this.btnJugo.TabIndex = 12;
+            this.btnJugo.UseVisualStyleBackColor = true;
+            this.btnJugo.Click += new System.EventHandler(this.btnJugo_Click);
+            // 
+            // btnChocolateCaliente
+            // 
+            this.btnChocolateCaliente.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_44_55_PM;
+            this.btnChocolateCaliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnChocolateCaliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChocolateCaliente.Location = new System.Drawing.Point(8, 160);
+            this.btnChocolateCaliente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChocolateCaliente.Name = "btnChocolateCaliente";
+            this.btnChocolateCaliente.Size = new System.Drawing.Size(88, 88);
+            this.btnChocolateCaliente.TabIndex = 10;
+            this.btnChocolateCaliente.UseVisualStyleBackColor = true;
+            this.btnChocolateCaliente.Click += new System.EventHandler(this.btnChocolateCaliente_Click);
+            // 
+            // btnFrapuccino
+            // 
+            this.btnFrapuccino.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_00_25_PM;
+            this.btnFrapuccino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFrapuccino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFrapuccino.Location = new System.Drawing.Point(9, 256);
+            this.btnFrapuccino.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFrapuccino.Name = "btnFrapuccino";
+            this.btnFrapuccino.Size = new System.Drawing.Size(87, 88);
+            this.btnFrapuccino.TabIndex = 13;
+            this.btnFrapuccino.UseVisualStyleBackColor = true;
+            this.btnFrapuccino.Click += new System.EventHandler(this.btnFrapuccino_Click);
             // 
             // btnAguaMineral
             // 
@@ -301,244 +547,85 @@
             this.btnIcedCoffee.UseVisualStyleBackColor = true;
             this.btnIcedCoffee.Click += new System.EventHandler(this.btnIcedCoffee_Click);
             // 
-            // btnFrapuccino
+            // panel1
             // 
-            this.btnFrapuccino.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_00_25_PM;
-            this.btnFrapuccino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFrapuccino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFrapuccino.Location = new System.Drawing.Point(9, 256);
-            this.btnFrapuccino.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFrapuccino.Name = "btnFrapuccino";
-            this.btnFrapuccino.Size = new System.Drawing.Size(87, 88);
-            this.btnFrapuccino.TabIndex = 13;
-            this.btnFrapuccino.UseVisualStyleBackColor = true;
-            this.btnFrapuccino.Click += new System.EventHandler(this.btnFrapuccino_Click);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.btnMinimizar);
+            this.panel1.Controls.Add(this.btnCerrarApp);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(947, 31);
+            this.panel1.TabIndex = 25;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // btnJugo
+            // btnCerrarApp
             // 
-            this.btnJugo.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_58_50_PM;
-            this.btnJugo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnJugo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJugo.Location = new System.Drawing.Point(108, 258);
-            this.btnJugo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnJugo.Name = "btnJugo";
-            this.btnJugo.Size = new System.Drawing.Size(87, 88);
-            this.btnJugo.TabIndex = 12;
-            this.btnJugo.UseVisualStyleBackColor = true;
-            this.btnJugo.Click += new System.EventHandler(this.btnJugo_Click);
+            this.btnCerrarApp.Image = global::SisGestionCafeteriaBuenGranito.Properties.Resources.Close_Window_claro;
+            this.btnCerrarApp.Location = new System.Drawing.Point(908, 3);
+            this.btnCerrarApp.Name = "btnCerrarApp";
+            this.btnCerrarApp.Size = new System.Drawing.Size(24, 25);
+            this.btnCerrarApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrarApp.TabIndex = 24;
+            this.btnCerrarApp.TabStop = false;
+            this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
-            // btnInfusion
+            // btnMinimizar
             // 
-            this.btnInfusion.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_48_00_PM;
-            this.btnInfusion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnInfusion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfusion.Location = new System.Drawing.Point(204, 159);
-            this.btnInfusion.Margin = new System.Windows.Forms.Padding(4);
-            this.btnInfusion.Name = "btnInfusion";
-            this.btnInfusion.Size = new System.Drawing.Size(87, 88);
-            this.btnInfusion.TabIndex = 11;
-            this.btnInfusion.UseVisualStyleBackColor = true;
-            this.btnInfusion.Click += new System.EventHandler(this.btnInfusion_Click);
+            this.btnMinimizar.Image = global::SisGestionCafeteriaBuenGranito.Properties.Resources.Minimize_Window_claro;
+            this.btnMinimizar.Location = new System.Drawing.Point(878, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(24, 25);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinimizar.TabIndex = 25;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
-            // btnChocolateCaliente
+            // label3
             // 
-            this.btnChocolateCaliente.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_44_55_PM;
-            this.btnChocolateCaliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnChocolateCaliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChocolateCaliente.Location = new System.Drawing.Point(8, 160);
-            this.btnChocolateCaliente.Margin = new System.Windows.Forms.Padding(4);
-            this.btnChocolateCaliente.Name = "btnChocolateCaliente";
-            this.btnChocolateCaliente.Size = new System.Drawing.Size(88, 88);
-            this.btnChocolateCaliente.TabIndex = 10;
-            this.btnChocolateCaliente.UseVisualStyleBackColor = true;
-            this.btnChocolateCaliente.Click += new System.EventHandler(this.btnChocolateCaliente_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(154)))), ((int)(((byte)(107)))));
+            this.label3.Location = new System.Drawing.Point(335, 368);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 18);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Buscar producto...";
             // 
-            // btnLatte
+            // pictureBox1
             // 
-            this.btnLatte.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_30_02_PM;
-            this.btnLatte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLatte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLatte.Location = new System.Drawing.Point(299, 62);
-            this.btnLatte.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLatte.Name = "btnLatte";
-            this.btnLatte.Size = new System.Drawing.Size(87, 89);
-            this.btnLatte.TabIndex = 9;
-            this.btnLatte.UseVisualStyleBackColor = true;
-            this.btnLatte.Click += new System.EventHandler(this.btnLatte_Click);
+            this.pictureBox1.Image = global::SisGestionCafeteriaBuenGranito.Properties.Resources.Buy_For_Change;
+            this.pictureBox1.Location = new System.Drawing.Point(81, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
-            // btnCapuchino
+            // label4
             // 
-            this.btnCapuchino.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_30_15_PM;
-            this.btnCapuchino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCapuchino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapuchino.Location = new System.Drawing.Point(204, 62);
-            this.btnCapuchino.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCapuchino.Name = "btnCapuchino";
-            this.btnCapuchino.Size = new System.Drawing.Size(87, 89);
-            this.btnCapuchino.TabIndex = 8;
-            this.btnCapuchino.UseVisualStyleBackColor = true;
-            this.btnCapuchino.Click += new System.EventHandler(this.btnCapuchino_Click);
-            // 
-            // btnAmericano
-            // 
-            this.btnAmericano.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_29_47_PM;
-            this.btnAmericano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAmericano.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAmericano.Location = new System.Drawing.Point(108, 62);
-            this.btnAmericano.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAmericano.Name = "btnAmericano";
-            this.btnAmericano.Size = new System.Drawing.Size(87, 89);
-            this.btnAmericano.TabIndex = 7;
-            this.btnAmericano.UseVisualStyleBackColor = true;
-            this.btnAmericano.Click += new System.EventHandler(this.btnAmericano_Click);
-            // 
-            // btnCroissant
-            // 
-            this.btnCroissant.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_10_07_44_PM;
-            this.btnCroissant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCroissant.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCroissant.Location = new System.Drawing.Point(395, 158);
-            this.btnCroissant.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCroissant.Name = "btnCroissant";
-            this.btnCroissant.Size = new System.Drawing.Size(87, 88);
-            this.btnCroissant.TabIndex = 3;
-            this.btnCroissant.UseVisualStyleBackColor = true;
-            this.btnCroissant.Click += new System.EventHandler(this.btnCroissant_Click);
-            // 
-            // btnCafe
-            // 
-            this.btnCafe.BackgroundImage = global::SisGestionCafeteriaBuenGranito.Properties.Resources.WhatsApp_Image_2025_11_25_at_9_29_32_PM;
-            this.btnCafe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCafe.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCafe.Location = new System.Drawing.Point(8, 63);
-            this.btnCafe.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCafe.Name = "btnCafe";
-            this.btnCafe.Size = new System.Drawing.Size(88, 89);
-            this.btnCafe.TabIndex = 2;
-            this.btnCafe.UseVisualStyleBackColor = true;
-            this.btnCafe.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnCafe_MouseClick);
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(117, 363);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(211, 31);
-            this.txtBuscar.TabIndex = 21;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // lstResultados
-            // 
-            this.lstResultados.FormattingEnabled = true;
-            this.lstResultados.ItemHeight = 16;
-            this.lstResultados.Location = new System.Drawing.Point(117, 400);
-            this.lstResultados.Name = "lstResultados";
-            this.lstResultados.Size = new System.Drawing.Size(365, 132);
-            this.lstResultados.TabIndex = 22;
-            this.lstResultados.Click += new System.EventHandler(this.lstResultados_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(64)))), ((int)(((byte)(43)))));
-            this.label2.Location = new System.Drawing.Point(111, 12);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(247, 36);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "PUNTO DE VENTA";
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1057, 635);
-            this.tabControl1.TabIndex = 24;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.OldLace;
-            this.tabPage1.Controls.Add(this.pnl1);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.lstResultados);
-            this.tabPage1.Controls.Add(this.btnCafe);
-            this.tabPage1.Controls.Add(this.txtBuscar);
-            this.tabPage1.Controls.Add(this.btnCroissant);
-            this.tabPage1.Controls.Add(this.btnMuffin);
-            this.tabPage1.Controls.Add(this.btnAmericano);
-            this.tabPage1.Controls.Add(this.btnEmpanada);
-            this.tabPage1.Controls.Add(this.btnCapuchino);
-            this.tabPage1.Controls.Add(this.btnMocaccino);
-            this.tabPage1.Controls.Add(this.btnLatte);
-            this.tabPage1.Controls.Add(this.btnSandwichPollo);
-            this.tabPage1.Controls.Add(this.btnInfusion);
-            this.tabPage1.Controls.Add(this.btnGaseosa);
-            this.tabPage1.Controls.Add(this.btnJugo);
-            this.tabPage1.Controls.Add(this.btnChocolateCaliente);
-            this.tabPage1.Controls.Add(this.btnFrapuccino);
-            this.tabPage1.Controls.Add(this.btnAguaMineral);
-            this.tabPage1.Controls.Add(this.btnIcedCoffee);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1049, 606);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Punto de Venta";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.btnRefrescarEntregas);
-            this.tabPage2.Controls.Add(this.btnEntregarPedido);
-            this.tabPage2.Controls.Add(this.dgvEntregas);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1049, 606);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Entregas / Despacho";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dgvEntregas
-            // 
-            this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEntregas.Location = new System.Drawing.Point(35, 39);
-            this.dgvEntregas.Name = "dgvEntregas";
-            this.dgvEntregas.Size = new System.Drawing.Size(421, 523);
-            this.dgvEntregas.TabIndex = 0;
-            // 
-            // btnEntregarPedido
-            // 
-            this.btnEntregarPedido.Location = new System.Drawing.Point(662, 221);
-            this.btnEntregarPedido.Name = "btnEntregarPedido";
-            this.btnEntregarPedido.Size = new System.Drawing.Size(130, 66);
-            this.btnEntregarPedido.TabIndex = 1;
-            this.btnEntregarPedido.Text = "EntregarPedido";
-            this.btnEntregarPedido.UseVisualStyleBackColor = true;
-            this.btnEntregarPedido.Click += new System.EventHandler(this.btnEntregarPedido_Click);
-            // 
-            // btnRefrescarEntregas
-            // 
-            this.btnRefrescarEntregas.Location = new System.Drawing.Point(662, 311);
-            this.btnRefrescarEntregas.Name = "btnRefrescarEntregas";
-            this.btnRefrescarEntregas.Size = new System.Drawing.Size(130, 66);
-            this.btnRefrescarEntregas.TabIndex = 2;
-            this.btnRefrescarEntregas.Text = "RefrescarEntregas";
-            this.btnRefrescarEntregas.UseVisualStyleBackColor = true;
-            this.btnRefrescarEntregas.Click += new System.EventHandler(this.btnRefrescarEntregas_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(13, 9);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(273, 19);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Cafetería \"El Buen Granito\" v.3.1.05";
             // 
             // FrmCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(1219, 640);
+            this.ClientSize = new System.Drawing.Size(947, 640);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCaja";
             this.Opacity = 0.98D;
@@ -553,6 +640,11 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarApp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -595,6 +687,12 @@
         private System.Windows.Forms.Button btnRefrescarEntregas;
         private System.Windows.Forms.Button btnEntregarPedido;
         private System.Windows.Forms.DataGridView dgvEntregas;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox btnCerrarApp;
+        private System.Windows.Forms.PictureBox btnMinimizar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

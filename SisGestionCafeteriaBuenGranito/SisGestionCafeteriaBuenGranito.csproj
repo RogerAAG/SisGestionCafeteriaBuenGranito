@@ -195,5 +195,23 @@
   <ItemGroup>
     <None Include="Resources\Minimize Window claro.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GranosCafe.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Settings Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kitchen Room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buy For Change.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Power Off Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Signing A Document.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

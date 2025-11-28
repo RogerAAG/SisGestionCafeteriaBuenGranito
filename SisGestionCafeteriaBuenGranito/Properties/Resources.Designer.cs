@@ -63,6 +63,26 @@ namespace SisGestionCafeteriaBuenGranito.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Admin_Settings_Male {
+            get {
+                object obj = ResourceManager.GetObject("Admin Settings Male", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Buy_For_Change {
+            get {
+                object obj = ResourceManager.GetObject("Buy For Change", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Close_Window {
             get {
                 object obj = ResourceManager.GetObject("Close Window", resourceCulture);
@@ -93,6 +113,26 @@ namespace SisGestionCafeteriaBuenGranito.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GranosCafe {
+            get {
+                object obj = ResourceManager.GetObject("GranosCafe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kitchen_Room {
+            get {
+                object obj = ResourceManager.GetObject("Kitchen Room", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Minimize_Window {
             get {
                 object obj = ResourceManager.GetObject("Minimize Window", resourceCulture);
@@ -106,6 +146,26 @@ namespace SisGestionCafeteriaBuenGranito.Properties {
         internal static System.Drawing.Bitmap Minimize_Window_claro {
             get {
                 object obj = ResourceManager.GetObject("Minimize Window claro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Power_Off_Button {
+            get {
+                object obj = ResourceManager.GetObject("Power Off Button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Signing_A_Document {
+            get {
+                object obj = ResourceManager.GetObject("Signing A Document", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
