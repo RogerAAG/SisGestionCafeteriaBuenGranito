@@ -35,33 +35,21 @@ namespace SisGestionCafeteriaBuenGranito
                 return;
             }
 
-            // Llamamos a la lógica que creamos
             UsuarioLogica logica = new UsuarioLogica();
             var usuario = logica.Autenticar(dni, pass);
 
             if (usuario != null)
             {
-                MessageBox.Show($"¡Bienvenido, {usuario.Nombre}!", "Acceso Correcto");
+                // YA NO ABRIMOS LOS FORMS DIRECTOS AQUI
+                // En su lugar, abrimos el Menú Principal y le pasamos el usuario
 
-                // ESCONDER LOGIN Y ABRIR FORMULARIO SEGÚN ROL
-                this.Hide();
-
-                if (usuario.IdRol == 1) // Administrador
-                {
-                    new FrmAdmin().Show();
-                }
-                else if (usuario.IdRol == 2) // Vendedor/Cajero
-                {
-                    new FrmCaja().Show();
-                }
-                else if (usuario.IdRol == 3) // Cocinero
-                {
-                    new FrmCocina().Show();
-                }
+                FrmMenuPrincipal menu = new FrmMenuPrincipal(usuario);
+                this.Hide(); // Ocultamos el login
+                menu.Show(); // Mostramos el menú
             }
             else
             {
-                MessageBox.Show("DNI o Contraseña incorrectos.", "Error de Acceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Credenciales incorrectas.");
             }
         }
 
