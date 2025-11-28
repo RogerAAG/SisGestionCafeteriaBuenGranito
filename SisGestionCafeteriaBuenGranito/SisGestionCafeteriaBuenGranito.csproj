@@ -183,5 +183,17 @@
   <ItemGroup>
     <None Include="Resources\FondoCafe.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close Window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize Window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close Window claro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize Window claro.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

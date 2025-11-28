@@ -37,7 +37,7 @@
             // 
             // btnIrCaja
             // 
-            this.btnIrCaja.Location = new System.Drawing.Point(84, 101);
+            this.btnIrCaja.Location = new System.Drawing.Point(84, 133);
             this.btnIrCaja.Name = "btnIrCaja";
             this.btnIrCaja.Size = new System.Drawing.Size(137, 60);
             this.btnIrCaja.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // btnIrAdmin
             // 
-            this.btnIrAdmin.Location = new System.Drawing.Point(84, 265);
+            this.btnIrAdmin.Location = new System.Drawing.Point(84, 277);
             this.btnIrAdmin.Name = "btnIrAdmin";
             this.btnIrAdmin.Size = new System.Drawing.Size(137, 60);
             this.btnIrAdmin.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // btnIrCocina
             // 
-            this.btnIrCocina.Location = new System.Drawing.Point(84, 183);
+            this.btnIrCocina.Location = new System.Drawing.Point(84, 199);
             this.btnIrCocina.Name = "btnIrCocina";
             this.btnIrCocina.Size = new System.Drawing.Size(137, 60);
             this.btnIrCocina.TabIndex = 2;
@@ -68,7 +68,7 @@
             // lblBienvenida
             // 
             this.lblBienvenida.AutoSize = true;
-            this.lblBienvenida.Location = new System.Drawing.Point(84, 41);
+            this.lblBienvenida.Location = new System.Drawing.Point(12, 120);
             this.lblBienvenida.Name = "lblBienvenida";
             this.lblBienvenida.Size = new System.Drawing.Size(35, 13);
             this.lblBienvenida.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(84, 343);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(84, 354);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(137, 60);
             this.btnCerrarSesion.TabIndex = 4;
@@ -88,12 +88,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(304, 435);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.lblBienvenida);
             this.Controls.Add(this.btnIrCocina);
             this.Controls.Add(this.btnIrAdmin);
             this.Controls.Add(this.btnIrCaja);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMenuPrincipal";
             this.Text = "FrmMenuPrincipal";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenuPrincipal_FormClosed);
