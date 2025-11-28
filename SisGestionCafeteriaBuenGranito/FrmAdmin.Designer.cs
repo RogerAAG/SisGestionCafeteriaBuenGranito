@@ -55,10 +55,12 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(37, 9);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(701, 429);
+            this.tabControl1.Size = new System.Drawing.Size(827, 446);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -71,10 +73,10 @@
             this.tabPage1.Controls.Add(this.txtPrecio);
             this.tabPage1.Controls.Add(this.txtNombreProducto);
             this.tabPage1.Controls.Add(this.dgvProductos);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(693, 403);
+            this.tabPage1.Size = new System.Drawing.Size(819, 416);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gestión de Catálogo";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -86,10 +88,10 @@
             this.tabPage2.Controls.Add(this.btnFiltrar);
             this.tabPage2.Controls.Add(this.dtpFin);
             this.tabPage2.Controls.Add(this.dtpInicio);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(693, 403);
+            this.tabPage2.Size = new System.Drawing.Size(819, 416);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Reporte de Ventas";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -97,47 +99,47 @@
             // dgvProductos
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(20, 28);
+            this.dgvProductos.Location = new System.Drawing.Point(8, 76);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(318, 198);
+            this.dgvProductos.Size = new System.Drawing.Size(513, 335);
             this.dgvProductos.TabIndex = 1;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
             // txtNombreProducto
             // 
-            this.txtNombreProducto.Location = new System.Drawing.Point(363, 32);
+            this.txtNombreProducto.Location = new System.Drawing.Point(542, 36);
             this.txtNombreProducto.Name = "txtNombreProducto";
-            this.txtNombreProducto.Size = new System.Drawing.Size(221, 20);
+            this.txtNombreProducto.Size = new System.Drawing.Size(221, 23);
             this.txtNombreProducto.TabIndex = 2;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(363, 72);
+            this.txtPrecio.Location = new System.Drawing.Point(542, 85);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(221, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(221, 23);
             this.txtPrecio.TabIndex = 3;
             // 
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(363, 114);
+            this.cmbCategoria.Location = new System.Drawing.Point(542, 133);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(221, 21);
+            this.cmbCategoria.Size = new System.Drawing.Size(221, 25);
             this.cmbCategoria.TabIndex = 4;
             // 
             // chkActivo
             // 
             this.chkActivo.AutoSize = true;
-            this.chkActivo.Location = new System.Drawing.Point(607, 28);
+            this.chkActivo.Location = new System.Drawing.Point(613, 275);
             this.chkActivo.Name = "chkActivo";
-            this.chkActivo.Size = new System.Drawing.Size(75, 17);
+            this.chkActivo.Size = new System.Drawing.Size(94, 21);
             this.chkActivo.TabIndex = 5;
             this.chkActivo.Text = "Disponible";
             this.chkActivo.UseVisualStyleBackColor = true;
             // 
             // btnGuardarProducto
             // 
-            this.btnGuardarProducto.Location = new System.Drawing.Point(137, 282);
+            this.btnGuardarProducto.Location = new System.Drawing.Point(566, 317);
             this.btnGuardarProducto.Name = "btnGuardarProducto";
             this.btnGuardarProducto.Size = new System.Drawing.Size(180, 46);
             this.btnGuardarProducto.TabIndex = 6;
@@ -147,9 +149,9 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(363, 282);
+            this.btnLimpiar.Location = new System.Drawing.Point(566, 203);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(166, 46);
+            this.btnLimpiar.Size = new System.Drawing.Size(180, 46);
             this.btnLimpiar.TabIndex = 7;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -160,28 +162,28 @@
             this.lblIdProducto.AutoSize = true;
             this.lblIdProducto.Location = new System.Drawing.Point(590, 32);
             this.lblIdProducto.Name = "lblIdProducto";
-            this.lblIdProducto.Size = new System.Drawing.Size(0, 13);
+            this.lblIdProducto.Size = new System.Drawing.Size(0, 17);
             this.lblIdProducto.TabIndex = 8;
             // 
             // dtpInicio
             // 
-            this.dtpInicio.Location = new System.Drawing.Point(20, 26);
+            this.dtpInicio.Location = new System.Drawing.Point(6, 26);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(200, 20);
+            this.dtpInicio.Size = new System.Drawing.Size(200, 23);
             this.dtpInicio.TabIndex = 0;
             // 
             // dtpFin
             // 
-            this.dtpFin.Location = new System.Drawing.Point(20, 67);
+            this.dtpFin.Location = new System.Drawing.Point(239, 26);
             this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(200, 20);
+            this.dtpFin.Size = new System.Drawing.Size(200, 23);
             this.dtpFin.TabIndex = 1;
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Location = new System.Drawing.Point(255, 26);
+            this.btnFiltrar.Location = new System.Drawing.Point(472, 14);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(161, 45);
+            this.btnFiltrar.Size = new System.Drawing.Size(191, 51);
             this.btnFiltrar.TabIndex = 2;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -190,14 +192,14 @@
             // dgvReporte
             // 
             this.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReporte.Location = new System.Drawing.Point(20, 116);
+            this.dgvReporte.Location = new System.Drawing.Point(23, 79);
             this.dgvReporte.Name = "dgvReporte";
-            this.dgvReporte.Size = new System.Drawing.Size(462, 258);
+            this.dgvReporte.Size = new System.Drawing.Size(640, 320);
             this.dgvReporte.TabIndex = 3;
             // 
             // btnExportar
             // 
-            this.btnExportar.Location = new System.Drawing.Point(507, 269);
+            this.btnExportar.Location = new System.Drawing.Point(678, 331);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(123, 68);
             this.btnExportar.TabIndex = 4;
@@ -209,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(827, 446);
             this.Controls.Add(this.tabControl1);
             this.Name = "FrmAdmin";
             this.Text = "FrmAdmin";
