@@ -11,6 +11,7 @@ namespace SisGestionCafeteriaBuenGranito
         {
             public int IdUsuario { get; set; }
             public string Nombre { get; set; }
+            public string Apellido { get; set; }
             public int IdRol { get; set; } // 1: Admin, 2: Vendedor, 3: Cocina
         }
 
@@ -21,7 +22,7 @@ namespace SisGestionCafeteriaBuenGranito
 
             using (SqlConnection conexion = ConexionDB.ObtenerConexion())
             {
-                string query = "SELECT IdUsuario, Nombre, IdRol FROM Usuarios WHERE DNI = @dni AND Contrasena = @pass AND Activo = 1";
+                string query = "SELECT IdUsuario, Nombre, Apellido, IdRol FROM Usuarios WHERE DNI = @dni AND Contrasena = @pass AND Activo = 1";
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@dni", dni);
                 cmd.Parameters.AddWithValue("@pass", password);
@@ -34,6 +35,7 @@ namespace SisGestionCafeteriaBuenGranito
                         {
                             IdUsuario = Convert.ToInt32(reader["IdUsuario"]),
                             Nombre = reader["Nombre"].ToString(),
+                            Apellido = reader["Apellido"].ToString(),
                             IdRol = Convert.ToInt32(reader["IdRol"])
                         };
                     }

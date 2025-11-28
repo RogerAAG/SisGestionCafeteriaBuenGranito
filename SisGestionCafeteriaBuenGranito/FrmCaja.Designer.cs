@@ -33,6 +33,7 @@
             this.btnCobrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.pnl1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblVuelto = new System.Windows.Forms.Label();
             this.lblMontodePago = new System.Windows.Forms.Label();
@@ -44,10 +45,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvEntregas = new System.Windows.Forms.DataGridView();
-            this.btnEntregarPedido = new System.Windows.Forms.Button();
-            this.btnRefrescarEntregas = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnCafe = new System.Windows.Forms.Button();
             this.btnCroissant = new System.Windows.Forms.Button();
             this.btnMuffin = new System.Windows.Forms.Button();
@@ -64,32 +63,38 @@
             this.btnFrapuccino = new System.Windows.Forms.Button();
             this.btnAguaMineral = new System.Windows.Forms.Button();
             this.btnIcedCoffee = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnRefrescarEntregas = new System.Windows.Forms.Button();
+            this.btnEntregarPedido = new System.Windows.Forms.Button();
+            this.dgvEntregas = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCerrarApp = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblUsuarioActual = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnCerrarApp = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.pnl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarApp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarApp)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPedido
             // 
             this.dgvPedido.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(232)))), ((int)(((byte)(208)))));
+            this.dgvPedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedido.Location = new System.Drawing.Point(19, 49);
             this.dgvPedido.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPedido.Name = "dgvPedido";
-            this.dgvPedido.Size = new System.Drawing.Size(406, 268);
+            this.dgvPedido.Size = new System.Drawing.Size(406, 292);
             this.dgvPedido.TabIndex = 0;
             // 
             // lblTotal
@@ -97,7 +102,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTotal.Location = new System.Drawing.Point(153, 325);
+            this.lblTotal.Location = new System.Drawing.Point(156, 349);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(151, 45);
@@ -108,7 +113,7 @@
             // 
             this.btnCobrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(154)))), ((int)(((byte)(107)))));
             this.btnCobrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.Location = new System.Drawing.Point(160, 385);
+            this.btnCobrar.Location = new System.Drawing.Point(163, 409);
             this.btnCobrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(141, 43);
@@ -121,7 +126,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Brown;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(12, 325);
+            this.btnEliminar.Location = new System.Drawing.Point(15, 349);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(133, 43);
@@ -133,6 +138,7 @@
             // pnl1
             // 
             this.pnl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.pnl1.Controls.Add(this.pictureBox2);
             this.pnl1.Controls.Add(this.label1);
             this.pnl1.Controls.Add(this.lblVuelto);
             this.pnl1.Controls.Add(this.lblMontodePago);
@@ -147,8 +153,18 @@
             this.pnl1.Location = new System.Drawing.Point(498, 3);
             this.pnl1.Margin = new System.Windows.Forms.Padding(4);
             this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(438, 565);
+            this.pnl1.Size = new System.Drawing.Size(438, 571);
             this.pnl1.TabIndex = 6;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SisGestionCafeteriaBuenGranito.Properties.Resources.Checkout;
+            this.pictureBox2.Location = new System.Drawing.Point(105, 409);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(43, 43);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -167,7 +183,7 @@
             this.lblVuelto.AutoSize = true;
             this.lblVuelto.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVuelto.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblVuelto.Location = new System.Drawing.Point(146, 488);
+            this.lblVuelto.Location = new System.Drawing.Point(149, 512);
             this.lblVuelto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVuelto.Name = "lblVuelto";
             this.lblVuelto.Size = new System.Drawing.Size(158, 30);
@@ -179,7 +195,7 @@
             this.lblMontodePago.AutoSize = true;
             this.lblMontodePago.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontodePago.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMontodePago.Location = new System.Drawing.Point(64, 449);
+            this.lblMontodePago.Location = new System.Drawing.Point(67, 473);
             this.lblMontodePago.Name = "lblMontodePago";
             this.lblMontodePago.Size = new System.Drawing.Size(90, 21);
             this.lblMontodePago.TabIndex = 9;
@@ -189,7 +205,7 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Brown;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(309, 325);
+            this.btnCancelar.Location = new System.Drawing.Point(312, 349);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(121, 43);
@@ -200,7 +216,7 @@
             // 
             // txtMontoRecibido
             // 
-            this.txtMontoRecibido.Location = new System.Drawing.Point(160, 447);
+            this.txtMontoRecibido.Location = new System.Drawing.Point(163, 471);
             this.txtMontoRecibido.Name = "txtMontoRecibido";
             this.txtMontoRecibido.Size = new System.Drawing.Size(141, 27);
             this.txtMontoRecibido.TabIndex = 7;
@@ -258,10 +274,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 37);
+            this.tabControl1.Location = new System.Drawing.Point(0, 31);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(947, 603);
+            this.tabControl1.Size = new System.Drawing.Size(947, 609);
             this.tabControl1.TabIndex = 24;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
@@ -294,50 +310,31 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(939, 571);
+            this.tabPage1.Size = new System.Drawing.Size(939, 577);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Punto de Venta";
             // 
-            // tabPage2
+            // pictureBox1
             // 
-            this.tabPage2.Controls.Add(this.btnRefrescarEntregas);
-            this.tabPage2.Controls.Add(this.btnEntregarPedido);
-            this.tabPage2.Controls.Add(this.dgvEntregas);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(939, 547);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Entregas / Despacho";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = global::SisGestionCafeteriaBuenGranito.Properties.Resources.Buy_For_Change;
+            this.pictureBox1.Location = new System.Drawing.Point(81, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
-            // dgvEntregas
+            // label3
             // 
-            this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEntregas.Location = new System.Drawing.Point(30, 32);
-            this.dgvEntregas.Name = "dgvEntregas";
-            this.dgvEntregas.Size = new System.Drawing.Size(398, 401);
-            this.dgvEntregas.TabIndex = 0;
-            // 
-            // btnEntregarPedido
-            // 
-            this.btnEntregarPedido.Location = new System.Drawing.Point(662, 221);
-            this.btnEntregarPedido.Name = "btnEntregarPedido";
-            this.btnEntregarPedido.Size = new System.Drawing.Size(130, 66);
-            this.btnEntregarPedido.TabIndex = 1;
-            this.btnEntregarPedido.Text = "EntregarPedido";
-            this.btnEntregarPedido.UseVisualStyleBackColor = true;
-            this.btnEntregarPedido.Click += new System.EventHandler(this.btnEntregarPedido_Click);
-            // 
-            // btnRefrescarEntregas
-            // 
-            this.btnRefrescarEntregas.Location = new System.Drawing.Point(662, 311);
-            this.btnRefrescarEntregas.Name = "btnRefrescarEntregas";
-            this.btnRefrescarEntregas.Size = new System.Drawing.Size(130, 66);
-            this.btnRefrescarEntregas.TabIndex = 2;
-            this.btnRefrescarEntregas.Text = "RefrescarEntregas";
-            this.btnRefrescarEntregas.UseVisualStyleBackColor = true;
-            this.btnRefrescarEntregas.Click += new System.EventHandler(this.btnRefrescarEntregas_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(154)))), ((int)(((byte)(107)))));
+            this.label3.Location = new System.Drawing.Point(335, 368);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 18);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Buscar producto...";
             // 
             // btnCafe
             // 
@@ -547,9 +544,65 @@
             this.btnIcedCoffee.UseVisualStyleBackColor = true;
             this.btnIcedCoffee.Click += new System.EventHandler(this.btnIcedCoffee_Click);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.btnRefrescarEntregas);
+            this.tabPage2.Controls.Add(this.btnEntregarPedido);
+            this.tabPage2.Controls.Add(this.dgvEntregas);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(939, 577);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Entregas / Despacho";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(92, 43);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(362, 25);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "PEDIDOS LISTOS PARA LA ENTREGA";
+            // 
+            // btnRefrescarEntregas
+            // 
+            this.btnRefrescarEntregas.Location = new System.Drawing.Point(680, 305);
+            this.btnRefrescarEntregas.Name = "btnRefrescarEntregas";
+            this.btnRefrescarEntregas.Size = new System.Drawing.Size(164, 66);
+            this.btnRefrescarEntregas.TabIndex = 2;
+            this.btnRefrescarEntregas.Text = "RefrescarEntregas";
+            this.btnRefrescarEntregas.UseVisualStyleBackColor = true;
+            this.btnRefrescarEntregas.Click += new System.EventHandler(this.btnRefrescarEntregas_Click);
+            // 
+            // btnEntregarPedido
+            // 
+            this.btnEntregarPedido.Location = new System.Drawing.Point(680, 195);
+            this.btnEntregarPedido.Name = "btnEntregarPedido";
+            this.btnEntregarPedido.Size = new System.Drawing.Size(164, 66);
+            this.btnEntregarPedido.TabIndex = 1;
+            this.btnEntregarPedido.Text = "EntregarPedido";
+            this.btnEntregarPedido.UseVisualStyleBackColor = true;
+            this.btnEntregarPedido.Click += new System.EventHandler(this.btnEntregarPedido_Click);
+            // 
+            // dgvEntregas
+            // 
+            this.dgvEntregas.BackgroundColor = System.Drawing.Color.OldLace;
+            this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEntregas.Location = new System.Drawing.Point(84, 76);
+            this.dgvEntregas.Name = "dgvEntregas";
+            this.dgvEntregas.Size = new System.Drawing.Size(539, 406);
+            this.dgvEntregas.TabIndex = 0;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(54)))), ((int)(((byte)(33)))));
+            this.panel1.Controls.Add(this.lblUsuarioActual);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnMinimizar);
             this.panel1.Controls.Add(this.btnCerrarApp);
@@ -560,49 +613,17 @@
             this.panel1.TabIndex = 25;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // btnCerrarApp
+            // lblUsuarioActual
             // 
-            this.btnCerrarApp.Image = global::SisGestionCafeteriaBuenGranito.Properties.Resources.Close_Window_claro;
-            this.btnCerrarApp.Location = new System.Drawing.Point(908, 3);
-            this.btnCerrarApp.Name = "btnCerrarApp";
-            this.btnCerrarApp.Size = new System.Drawing.Size(24, 25);
-            this.btnCerrarApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCerrarApp.TabIndex = 24;
-            this.btnCerrarApp.TabStop = false;
-            this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Image = global::SisGestionCafeteriaBuenGranito.Properties.Resources.Minimize_Window_claro;
-            this.btnMinimizar.Location = new System.Drawing.Point(878, 3);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(24, 25);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinimizar.TabIndex = 25;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(154)))), ((int)(((byte)(107)))));
-            this.label3.Location = new System.Drawing.Point(335, 368);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 18);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Buscar producto...";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SisGestionCafeteriaBuenGranito.Properties.Resources.Buy_For_Change;
-            this.pictureBox1.Location = new System.Drawing.Point(81, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
+            this.lblUsuarioActual.AutoSize = true;
+            this.lblUsuarioActual.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioActual.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblUsuarioActual.Location = new System.Drawing.Point(612, 9);
+            this.lblUsuarioActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuarioActual.Name = "lblUsuarioActual";
+            this.lblUsuarioActual.Size = new System.Drawing.Size(85, 19);
+            this.lblUsuarioActual.TabIndex = 28;
+            this.lblUsuarioActual.Text = "Usuario: ...";
             // 
             // label4
             // 
@@ -615,6 +636,28 @@
             this.label4.Size = new System.Drawing.Size(273, 19);
             this.label4.TabIndex = 12;
             this.label4.Text = "Cafetería \"El Buen Granito\" v.3.1.05";
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Image = global::SisGestionCafeteriaBuenGranito.Properties.Resources.Minimize_Window_claro;
+            this.btnMinimizar.Location = new System.Drawing.Point(878, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(24, 25);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinimizar.TabIndex = 25;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnCerrarApp
+            // 
+            this.btnCerrarApp.Image = global::SisGestionCafeteriaBuenGranito.Properties.Resources.Close_Window_claro;
+            this.btnCerrarApp.Location = new System.Drawing.Point(908, 3);
+            this.btnCerrarApp.Name = "btnCerrarApp";
+            this.btnCerrarApp.Size = new System.Drawing.Size(24, 25);
+            this.btnCerrarApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrarApp.TabIndex = 24;
+            this.btnCerrarApp.TabStop = false;
+            this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
             // FrmCaja
             // 
@@ -635,16 +678,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.pnl1.ResumeLayout(false);
             this.pnl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarApp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarApp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -693,6 +738,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblUsuarioActual;
     }
 }
 

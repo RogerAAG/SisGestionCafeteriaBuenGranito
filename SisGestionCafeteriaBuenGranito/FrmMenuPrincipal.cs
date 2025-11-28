@@ -54,12 +54,16 @@ namespace SisGestionCafeteriaBuenGranito
 
         private void btnIrCaja_Click(object sender, EventArgs e)
         {
-            // Permitir acceso a Cajeros (Rol 2) y Admins (Rol 1)
             if (_usuarioActual.IdRol == 2 || _usuarioActual.IdRol == 1)
             {
-                // Pasamos el ID del usuario a la caja para registrar ventas
-                FrmCaja caja = new FrmCaja(_usuarioActual.IdUsuario);
+                string nombreCompleto = $"{_usuarioActual.Nombre} {_usuarioActual.Apellido}";
+                FrmCaja caja = new FrmCaja(_usuarioActual.IdUsuario, nombreCompleto);
+
+                // --- TRUCO DE NAVEGACIÓN ---
+                this.Hide(); // 1. Nos escondemos
+                caja.FormClosed += (s, args) => this.Show(); // 2. Cuando la Caja se cierre, reaparecemos
                 caja.Show();
+                // ---------------------------
             }
             else
             {
@@ -69,11 +73,21 @@ namespace SisGestionCafeteriaBuenGranito
 
         private void btnIrCocina_Click(object sender, EventArgs e)
         {
-            // Permitir acceso a Cocineros (Rol 3) y Admins (Rol 1)
             if (_usuarioActual.IdRol == 3 || _usuarioActual.IdRol == 1)
             {
-                FrmCocina cocina = new FrmCocina();
-                cocina.Show();
+                string nombreCompleto = $"{_usuarioActual.Nombre} {_usuarioActual.Apellido}";
+
+                // Instanciamos el formulario de Cocina
+                FrmCocina cocina = new FrmCocina(nombreCompleto);
+
+                // --- TRUCO DE NAVEGACIÓN ---
+                this.Hide(); // 1. Ocultamos el Menú Principal
+
+                // 2. Le decimos: "Cuando cierren la cocina, vuelve a aparecer tú"
+                cocina.FormClosed += (s, args) => this.Show();
+
+                cocina.Show(); // 3. Mostramos la Cocina
+                               // ---------------------------
             }
             else
             {
@@ -83,11 +97,16 @@ namespace SisGestionCafeteriaBuenGranito
 
         private void btnIrAdmin_Click(object sender, EventArgs e)
         {
-            // VALIDACIÓN ESTRICTA: SOLO ADMIN (Rol 1)
             if (_usuarioActual.IdRol == 1)
             {
-                FrmAdmin admin = new FrmAdmin();
+                string nombreCompleto = $"{_usuarioActual.Nombre} {_usuarioActual.Apellido}";
+                FrmAdmin admin = new FrmAdmin(nombreCompleto);
+
+                // --- TRUCO DE NAVEGACIÓN ---
+                this.Hide();
+                admin.FormClosed += (s, args) => this.Show();
                 admin.Show();
+                // ---------------------------
             }
             else
             {

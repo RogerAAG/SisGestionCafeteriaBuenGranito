@@ -32,15 +32,16 @@ namespace SisGestionCafeteriaBuenGranito
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-        public FrmCaja(int idUsuario)
+        public FrmCaja(int idUsuario, string nombreCompleto)
         {
             InitializeComponent();
             _idUsuarioActual = idUsuario;
+            lblUsuarioActual.Text = "Usuario: " + nombreCompleto;
             ConfigurarDiseño();
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
-        public FrmCaja() : this(1) { }
+        public FrmCaja() : this(1, "Usuario Prueba") { }
         private void ConfigurarDiseño()
         {
             dgvPedido.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -322,7 +323,7 @@ namespace SisGestionCafeteriaBuenGranito
 
         private void btnCerrarApp_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)

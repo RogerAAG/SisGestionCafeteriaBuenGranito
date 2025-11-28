@@ -213,5 +213,29 @@
   <ItemGroup>
     <None Include="Resources\Signing A Document.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checkout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sand Watch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Broom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export CSV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checked User Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password Reset.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
