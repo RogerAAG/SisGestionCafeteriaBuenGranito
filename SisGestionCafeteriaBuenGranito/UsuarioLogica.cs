@@ -66,5 +66,56 @@ namespace SisGestionCafeteriaBuenGranito
                 return false; // Probablemente el DNI ya existe
             }
         }
+        // --- MÉTODOS PARA CUS08 (GESTIÓN DE USUARIOS) ---
+
+        // 1. Listar todos los usuarios (menos la propia contraseña por seguridad)
+        public DataTable ObtenerUsuarios()
+        {
+            using (SqlConnection con = ConexionDB.ObtenerConexion())
+            {
+                string query = @"SELECT u.IdUsuario, u.Nombre, u.Apellido, u.DNI, 
+                                r.NombreRol, u.Activo 
+                         FROM Usuarios u
+                         INNER JOIN Roles r ON u.IdRol = r.IdRol";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        // 2. Editar Usuario (Cambiar rol o datos)
+        public bool EditarUsuario(int id, string nom, string ape, string dni, int idRol, bool activo)
+        {
+            using (SqlConnection con = ConexionDB.ObtenerConexion())
+            {
+                string query = @"UPDATE Usuarios SET 
+                         Nombre=@nom, Apellido=@ape, DNI=@dni, IdRol=@rol, Activo=@act 
+                         WHERE IdUsuario=@id";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@nom", nom);
+                cmd.Parameters.AddWithValue("@ape", ape);
+                cmd.Parameters.AddWithValue("@dni", dni);
+                cmd.Parameters.AddWithValue("@rol", idRol);
+                cmd.Parameters.AddWithValue("@act", activo);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        // 3. Resetear Contraseña (Opcional pero útil)
+        public bool ResetearClave(int idUsuario, string nuevaClave)
+        {
+            using (SqlConnection con = ConexionDB.ObtenerConexion())
+            {
+                string query = "UPDATE Usuarios SET Contrasena = @pass WHERE IdUsuario = @id";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@id", idUsuario);
+                cmd.Parameters.AddWithValue("@pass", nuevaClave);
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
     }
 }

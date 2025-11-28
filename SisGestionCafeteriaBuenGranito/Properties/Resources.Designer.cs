@@ -63,6 +63,16 @@ namespace SisGestionCafeteriaBuenGranito.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FondoCafe {
+            get {
+                object obj = ResourceManager.GetObject("FondoCafe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WhatsApp_Image_2025_11_25_at_10_00_25_PM {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2025-11-25 at 10.00.25 PM", resourceCulture);

@@ -13,6 +13,7 @@ namespace SisGestionCafeteriaBuenGranito
 {
     public partial class FrmAdmin : Form
     {
+        private UsuarioLogica userLogica = new UsuarioLogica();
         AdminLogica logica = new AdminLogica();
         public FrmAdmin()
         {
@@ -31,6 +32,19 @@ namespace SisGestionCafeteriaBuenGranito
         private void CargarGrillaProductos()
         {
             dgvProductos.DataSource = logica.ObtenerCatalogo();
+        }
+        private void CargarUsuarios()
+        {
+            dgvUsuarios.DataSource = userLogica.ObtenerUsuarios();
+        }
+        private void CargarComboRoles()
+        {
+            if (cmbRolUser.Items.Count == 0)
+            {
+                cmbRolUser.Items.Add("Administrador"); // index 0 -> Rol 1
+                cmbRolUser.Items.Add("Vendedor");      // index 1 -> Rol 2
+                cmbRolUser.Items.Add("Cocinero");      // index 2 -> Rol 3
+            }
         }
 
         private void btnGuardarProducto_Click(object sender, EventArgs e)
@@ -148,6 +162,95 @@ namespace SisGestionCafeteriaBuenGranito
             new FrmLogin().Show();
         }
 
-        
+        private void btnGuardarUser_Click(object sender, EventArgs e)
+        {
+            if (lblIdUserSeleccionado.Text == "0")
+            {
+                MessageBox.Show("Seleccione un usuario para editar.");
+                return;
+            }
+
+            int id = int.Parse(lblIdUserSeleccionado.Text);
+            int idRol = cmbRolUser.SelectedIndex + 1; // +1 porque BD empieza en 1
+
+            bool exito = userLogica.EditarUsuario(id, txtNomUser.Text, txtApeUser.Text, txtDniUser.Text, idRol, chkUserActivo.Checked);
+
+            if (exito)
+            {
+                MessageBox.Show("Usuario actualizado correctamente.");
+                CargarUsuarios();
+            }
+            else
+            {
+                MessageBox.Show("Error al actualizar.");
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 2) // Índice 2 es la pestaña "Usuarios"
+            {
+                CargarUsuarios();
+                CargarComboRoles(); // Método simple para llenar el combo si no está lleno
+            }
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvUsuarios.Rows[e.RowIndex];
+                lblIdUserSeleccionado.Text = row.Cells["IdUsuario"].Value.ToString();
+                txtNomUser.Text = row.Cells["Nombre"].Value.ToString();
+                txtApeUser.Text = row.Cells["Apellido"].Value.ToString();
+                txtDniUser.Text = row.Cells["DNI"].Value.ToString();
+
+                // Mapear nombre de rol a índice del combo
+                string rol = row.Cells["NombreRol"].Value.ToString();
+                if (rol == "Administrador") cmbRolUser.SelectedIndex = 0;
+                if (rol == "Vendedor") cmbRolUser.SelectedIndex = 1;
+                if (rol == "Cocinero") cmbRolUser.SelectedIndex = 2;
+
+                chkUserActivo.Checked = Convert.ToBoolean(row.Cells["Activo"].Value);
+            }
+        }
+
+        private void btnResetPass_Click(object sender, EventArgs e)
+        {
+            // 1. Validar que se haya seleccionado un usuario
+            if (lblIdUserSeleccionado.Text == "0")
+            {
+                MessageBox.Show("Primero seleccione un usuario de la lista.");
+                return;
+            }
+
+            // 2. Validar que haya escrito una contraseña nueva
+            if (string.IsNullOrWhiteSpace(txtNuevaClave.Text))
+            {
+                MessageBox.Show("Por favor, escriba la nueva contraseña en el cuadro de texto.", "Falta información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNuevaClave.Focus();
+                return;
+            }
+
+            // 3. Confirmar acción (Opcional, pero recomendado)
+            DialogResult confirmacion = MessageBox.Show($"¿Está seguro de cambiar la contraseña al usuario seleccionado?", "Confirmar Cambio", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmacion == DialogResult.Yes)
+            {
+                int id = int.Parse(lblIdUserSeleccionado.Text);
+                string nuevaPass = txtNuevaClave.Text;
+
+                // Llamamos a la lógica enviando lo que está en el TextBox
+                if (userLogica.ResetearClave(id, nuevaPass))
+                {
+                    MessageBox.Show($"Contraseña actualizada correctamente.", "Éxito");
+                    txtNuevaClave.Clear(); // Limpiamos el campo por seguridad
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar la contraseña.", "Error");
+                }
+            }
+        }
     }
 }

@@ -266,5 +266,45 @@ namespace SisGestionCafeteriaBuenGranito
                 ActualizarVista();
             }
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Si el usuario se cambia a la pestaña de entregas (índice 1)
+            if (tabControl1.SelectedIndex == 1)
+            {
+                CargarPedidosListos();
+            }
+        }
+        private void CargarPedidosListos()
+        {
+            dgvEntregas.DataSource = logica.ObtenerPedidosParaEntrega();
+        }
+
+        private void btnRefrescarEntregas_Click(object sender, EventArgs e)
+        {
+            CargarPedidosListos();
+        }
+
+        private void btnEntregarPedido_Click(object sender, EventArgs e)
+        {
+            if (dgvEntregas.CurrentRow != null)
+            {
+                int idPedido = Convert.ToInt32(dgvEntregas.CurrentRow.Cells["IdPedido"].Value);
+                string turno = dgvEntregas.CurrentRow.Cells["NumeroTurno"].Value.ToString();
+
+                if (MessageBox.Show($"¿Confirmar entrega del Turno {turno}?", "Entregar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (logica.ConfirmarEntrega(idPedido))
+                    {
+                        MessageBox.Show("Pedido entregado y ciclo cerrado.", "Éxito");
+                        CargarPedidosListos(); // Refrescar lista
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un pedido de la lista.", "Atención");
+            }
+        }
     }
 }

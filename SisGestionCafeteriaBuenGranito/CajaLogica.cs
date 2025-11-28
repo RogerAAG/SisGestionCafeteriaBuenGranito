@@ -15,6 +15,35 @@ namespace SisGestionCafeteriaBuenGranito
             public int Cantidad { get; set; }
             public decimal Subtotal { get { return Precio * Cantidad; } }
         }
+        // 1. Ver lista de pedidos que Cocina ya marcó como "Listos"
+        public System.Data.DataTable ObtenerPedidosParaEntrega()
+        {
+            using (SqlConnection con = ConexionDB.ObtenerConexion())
+            {
+                // Consultamos solo los que están listos para recoger
+                string query = @"SELECT p.IdPedido, p.NumeroTurno, p.Total 
+                         FROM Pedidos p
+                         INNER JOIN Comandas c ON p.IdPedido = c.IdPedido
+                         WHERE c.Estado = 'Listo'";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                System.Data.DataTable dt = new System.Data.DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        // 2. Cerrar el ciclo (Cambiar estado a "Entregado")
+        public bool ConfirmarEntrega(int idPedido)
+        {
+            using (SqlConnection con = ConexionDB.ObtenerConexion())
+            {
+                string query = "UPDATE Comandas SET Estado = 'Entregado', HoraEntregaCliente = GETDATE() WHERE IdPedido = @id";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@id", idPedido);
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
         // BUSCADOR DINÁMICO (Cumple RF-01)
         public List<ItemCarrito> BuscarProductosPorCoincidencia(string texto)
         {
